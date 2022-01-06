@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppDIAbetes.Views.Options.Info.PageInfo"
+             Title="Info"
+             IconImageSource="ic_count.png"
+             BackgroundColor="#FFFFFF">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="White" Margin="5,0,5,5">
+            <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="10,0,10,0" >
+
+                <Frame x:Name="fpacientes" HasShadow="True" Padding="5" BorderColor="#6fb7ff">
+                    <StackLayout>
+                        <Label Text="INFORMACIÓN PERSONAL" TextColor="#424949" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Small"/>
+
+                        <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                            <Label Text="Nombres" TextColor="Black" WidthRequest="110" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Small"/>
+                            <Entry x:Name="entryFirstName" Placeholder="Nombres" Keyboard="Text" FontSize="Small" TextColor="Black" WidthRequest="210"/>
+                        </StackLayout>
+                
+                        <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                            <Label Text="Apellidos" TextColor="Black" WidthRequest="110" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Small"/>
+                            <Entry x:Name="entryLastName" Placeholder="Apellidos" Keyboard="Text" FontSize="Small" TextColor="Black" WidthRequest="210"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                            <Label Text="Fecha de Nac." TextColor="Black" WidthRequest="110" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Small"/>
+                            <DatePicker Format="dd/MM/yyyy" 
+                                                    x:Name="dpFechaNac" TextColor="Black" FontSize="Small"            
+                                                    HorizontalOptions="EndAndExpand"  BackgroundColor="Transparent"
+                                                    MinimumDate="01/01/1920" MaximumDate="12/31/2030" WidthRequest="210"/>
+                        </StackLayout>
+                
+                        <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                            <Label Text="N° de Celular" TextColor="Black" WidthRequest="110" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Small"/>
+                            <Entry x:Name="entryPhone" Placeholder="Celular" MaxLength="9" Keyboard="Telephone" FontSize="Small" TextColor="Black" WidthRequest="210"/>
+                        </StackLayout>
+
+                        <Label x:Name="warningPhone" Text="" IsVisible="False" TextColor="#FF5959" FontSize="12" BackgroundColor="Transparent" FlexLayout.AlignSelf="End"/>
+                
+                        <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                            <Label Text="Tipo de Persona" TextColor="Black" WidthRequest="110" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Small"/>
+                            <Picker x:Name="pTipyPeople"
+                                    Title="Seleccionar" FontSize="Small" 
+                                    TextColor="Black" WidthRequest="208" 
+                                    SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                                <Picker.Items>
+                                    <x:String>PACIENTE</x:String>
+                                    <x:String>MÉDICO TRATANTE</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame x:Name="fmedico" HasShadow="True" Padding="5" BorderColor="#6fb7ff" IsVisible="False">
+                    <StackLayout>
+                        <Label Text="MÉDICO TRATANTE" TextColor="#424949" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Small"/>
+                        <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                            <Label x:Name="labelPhoneMedico" Text="N° Teléfono" TextColor="Black" WidthRequest="110" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Small" IsVisible="False"/>
+                            <Entry x:Name="entryPhoneMedico" Placeholder="Teléf de tu médico tratante" Keyboard="Telephone" FontSize="Small" TextColor="Black" WidthRequest="210" IsVisible="False"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                            <Label x:Name="labelEmailMedico" Text="Email" TextColor="Black" WidthRequest="110" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Small" IsVisible="False"/>
+                            <Entry x:Name="entryEmailMedico" Placeholder="Email de tu médico tratante" Keyboard="Email" FontSize="Small" TextColor="Black" WidthRequest="210" IsVisible="False" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Button x:Name="infoInsert" Clicked="infoInsert_Clicked" FontSize="Medium" TextColor="White" BorderColor="Black" BackgroundColor="#6fb7ff"  CornerRadius="5" FlexLayout.AlignSelf="Stretch" Text="Actualizar"></Button>
+            </FlexLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>    
+</ContentPage>

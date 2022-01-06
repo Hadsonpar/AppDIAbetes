@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppDIAbetes.Views.SignUpLogin" Title="Regístrese aquí">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="1" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>        
+        
+        <AbsoluteLayout>
+            <Image Source="fondo.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+
+            <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="30,0,30,0" BackgroundColor="Transparent">
+                <Image Source="DIAbetes.png" HeightRequest="150" WidthRequest="150" FlexLayout.AlignSelf="Center" BackgroundColor="Transparent" />
+
+                <Label TextColor="White" FontAttributes="Bold" Text="Crea tu cuenta de DÍAbetes" FlexLayout.AlignSelf="Center" FontSize="20"/>
+                <Grid Margin="15,15,15,0">
+                    <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="White" WidthRequest="300" CornerRadius="50"/>
+
+                    <Entry Grid.Row="0" Grid.Column="0" x:Name="entryEmail" Placeholder="Correo electrónico" Keyboard="Email" FontSize="Small" Margin="15,0,15,0" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" TextColor="#00b9de" />
+                </Grid>
+                
+                <Grid>
+                <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="White" WidthRequest="300" CornerRadius="50"/>
+
+                <Entry Grid.Row="0" Grid.Column="0" x:Name="entryName" Placeholder="Usuario" Keyboard="Email" FontSize="Small" Margin="15,0,15,0" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" TextColor="#00b9de" />
+                </Grid>
+
+                <Frame BackgroundColor="White" Padding="0" CornerRadius="50">
+                    <StackLayout Grid.Row="2" Grid.Column="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions >
+                            <Entry x:Name="entryPassword" IsPassword="True" Placeholder="Contraseña" FontSize="Small" Keyboard="Text" MaxLength="8" Margin="15,0,50,0"  FlexLayout.AlignSelf="Stretch"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" TextColor="#00b9de" Grid.Column="0" Grid.ColumnSpan="2"/>
+                            <Image x:Name="iconView" Source="hideicon.png" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1" Margin="15,0,15,0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ShowPass" NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" Padding="0" CornerRadius="50">
+                    <StackLayout Grid.Row="2" Grid.Column="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions >
+                            <Entry x:Name="entryConfPassword" IsPassword="True" Placeholder="Confirmar Contraseña" FontSize="Small" Keyboard="Text" MaxLength="8" Margin="15,0,50,0"  FlexLayout.AlignSelf="Stretch"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" TextColor="#00b9de" Grid.Column="0" Grid.ColumnSpan="2"/>
+                            <Image x:Name="iconViewConfPass" Source="hideicon.png" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1" Margin="15,0,15,0">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ShowConfPass" NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <!--<Grid>
+                    <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="White" WidthRequest="300" CornerRadius="50"/>
+
+                    <Entry Grid.Row="0" Grid.Column="0" x:Name="entryPassword" Placeholder="Contraseña" IsPassword="True" Keyboard="Text" MaxLength="8" FontSize="Small" Margin="15,0,15,0" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" TextColor="#00b9de" />
+                </Grid>
+
+                <Grid Margin="15,0,15,25">
+                    <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="White" WidthRequest="300" CornerRadius="50"/>
+
+                    <Entry Grid.Row="0" Grid.Column="0" x:Name="entryConfPassword" Placeholder="Confirmar Contraseña" IsPassword="True" Keyboard="Text" MaxLength="8" FontSize="Small" Margin="15,0,15,0" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" TextColor="#00b9de" />
+                </Grid>-->
+                
+                <Label x:Name="warningPassword" Text="" IsVisible="False" TextColor="Red" FontSize="Small" BackgroundColor="Transparent" FlexLayout.AlignSelf="End"/>
+                
+                <Button x:Name="signUp" FontSize="Medium" BorderColor="White" BorderWidth="2" FlexLayout.AlignSelf="Stretch" CornerRadius="50"  HorizontalOptions="CenterAndExpand" Text="Crear cuenta" Clicked="signUp_Clicked" TextColor="White" BackgroundColor="#00b9de"/>
+
+            </FlexLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppDIAbetes.Views.Options.Control.TabPageCtrlRecord"
+             Title="Histórico"
+             IconImageSource="ic_history.png"
+             BackgroundColor="#FFFFFF">
+    <ContentPage.Content>
+        <StackLayout Margin="5,5,5,5" Spacing="0">
+            <Frame Padding="5,5,5,5" x:Name="fSecDeterminar" IsVisible="True" BorderColor="#6fb7ff" BackgroundColor="Transparent">
+                <ListView x:Name="lvRecordMonth" ItemSelected="OnListItemSelected" BackgroundColor="Transparent" SeparatorColor="#6fb7ff">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell TextColor="#3399ff" DetailColor="#6fb7ff"
+                                        Text="{Binding title}"
+                                        Detail="{Binding detail}"
+                                        ImageSource="{Binding image}">
+                            </ImageCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

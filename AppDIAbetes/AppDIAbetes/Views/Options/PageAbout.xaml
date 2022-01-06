@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppDIAbetes.Views.Options.PageAbout">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <StackLayout>
+                    <StackLayout HeightRequest="220" BackgroundColor="White" Padding="0">
+                        <Image Source="about01.png" HeightRequest="220"/>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#436E99" Padding="15">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Label Text="Acerca de:" FontAttributes="Bold" FontSize="Title" TextColor="White"/>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Label Text="DÍAbetes es una aplicación móvil 100% diseñada pensando en las personas con diabetes que necesitan llevar un registro y control diario realizado por un glucómetro."/>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Label Text="Principales Objetivos:" FontAttributes="Bold" FontSize="Subtitle" TextColor="White"/>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Image Grid.Column="0" Source="ic_monitor.png" HorizontalOptions="Start"></Image>
+                                <Label Grid.Column="1" Grid.ColumnSpan="6" Text="Registro de control y visualización de resultados a través de listado de reportes mensuales, históricos y reportes con gráficas." HorizontalOptions="Start"/>
+                            </Grid>
+                            <Grid Grid.Row="4">
+                                <Image Grid.Column="0" Source="rptEmail48.png" HorizontalOptions="Start"></Image>
+                                <Label Grid.Column="1" Grid.ColumnSpan="6" Text="Facilitar el envío de resultados a su médico tratante de acuerdo al registro de control realizado durante el periodo indicado." HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout HeightRequest="220" BackgroundColor="#54c1e5" Padding="15">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Label Text="Hipoglucemia" FontAttributes="Bold" FontSize="Title"/>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Label Text="Situación en la que los valores de glucosa en sangre (glucemia) están por debajo de lo normal."/>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Label Text="Valores establecidos en esta aplicación:" FontAttributes="Bold" FontSize="Subtitle"/>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Image Grid.Column="0" Source="ic_LO005CB2.png" HorizontalOptions="Start"></Image>
+                                <Label Grid.Column="1" Grid.ColumnSpan="6" Text="Hipoglucemia severa en un rango de 0 a 20 mg/dL" HeightRequest="180" HorizontalOptions="Start"/>
+                            </Grid>
+                            <Grid Grid.Row="4">
+                                <Image Grid.Column="0" Source="ic_LO59A7F1.png" HorizontalOptions="Start"></Image>
+                                <Label Grid.Column="1" Grid.ColumnSpan="6" Text="Hipoglucemia elevada en un rango de 21 a 65 mg/dL" HeightRequest="180" HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout HeightRequest="220" BackgroundColor="#bfeb80" Padding="15">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Label Text="Normoglucemia" FontAttributes="Bold" FontSize="Title"/>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Label Text="Niveles normales de glucosa en la sangre. En ayunas, entre 70 y 110 miligramos de glucosa."/>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Label Text="Valores establecidos en esta aplicación:" FontAttributes="Bold" FontSize="Subtitle"/>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Image Grid.Column="0" Source="heartGreen24.png" HorizontalOptions="Start"></Image>
+                                <Label Grid.Column="1" Grid.ColumnSpan="6" Text="Nivel Normal en un rango de 66 a 132 mg/dL" HeightRequest="180" HorizontalOptions="Start" VerticalTextAlignment="Center"/>                            
+                            </Grid>
+                            <Grid Grid.Row="4">
+                                <Image Grid.Column="0" Source="heartYellow24.png" HorizontalOptions="Start"></Image>
+                                <Label Grid.Column="1" Grid.ColumnSpan="6" Text="Nivel Bueno en un rango de 133 a 197 mg/dL" HeightRequest="180" HorizontalOptions="Start" VerticalTextAlignment="Center"/>
+                            </Grid>
+                            <Grid Grid.Row="5">
+                                <Image Grid.Column="0" Source="heartOrange24.png" HorizontalOptions="Start"></Image>
+                                <Label Grid.Column="1" Grid.ColumnSpan="6" Text="Nivel Malo en un rango de 198 a 397 mg/dL" HeightRequest="180" HorizontalOptions="Start" VerticalTextAlignment="Center"/>
+                            </Grid>
+                        </Grid>                        
+                    </StackLayout>
+                    <StackLayout HeightRequest="220" BackgroundColor="#FF8484" Padding="15">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Label Text="Hiperglucemia" FontAttributes="Bold" FontSize="Title"/>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Label Text="Situación en la que los valores de glucosa en sangre (glucemia) están por encima de lo normal."/>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Label Text="Valores establecidos en esta aplicación:" FontAttributes="Bold" FontSize="Subtitle"/>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Image Grid.Column="0" Source="ic_HIF25858.png" HorizontalOptions="Start"></Image>
+                                <Label Grid.Column="1" Grid.ColumnSpan="6" Text="Hiperglucemia elevada en un rango de 398 a 600 mg/dL" HeightRequest="180" HorizontalOptions="Start"/>
+                            </Grid>
+                            <Grid Grid.Row="4">
+                                <Image Grid.Column="0" Source="ic_HIE60000.png" HorizontalOptions="Start"></Image>
+                                <Label Grid.Column="1" Grid.ColumnSpan="6" Text="Hiperglucemia severa en un rango de 601 a más mg/dL" HeightRequest="180" HorizontalOptions="Start"/>
+                            </Grid>
+                        </Grid>
+                        
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <!--<Button Grid.Row="0" Text="Descargar" FontSize="Small" BorderColor="White" BorderWidth="2" FontAttributes="None" BackgroundColor="Transparent" BorderRadius="50" TextColor="White" HorizontalOptions="End" Margin="0,0,20,22" VerticalOptions="End" Clicked="download_Clicked"/>-->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

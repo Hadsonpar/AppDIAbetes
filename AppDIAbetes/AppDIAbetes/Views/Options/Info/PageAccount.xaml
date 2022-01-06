@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppDIAbetes.Views.Options.Info.PageAccount"
+             Title="Cuenta"
+             IconImageSource="ic_count_email.png"
+             BackgroundColor="#FFFFFF">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="White" Margin="5,0,5,5">
+            <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="10,0,10,0"  >
+                <Label x:Name="labelId" Text="" IsVisible="False" TextColor="Blue" FontSize="12" BackgroundColor="Transparent" FlexLayout.AlignSelf="End"/>
+                <Frame x:Name="fpacientes" HasShadow="True" Padding="5" BorderColor="#6fb7ff">
+                    <StackLayout>
+                        <Label Text="INFORMACIÓN DE TU CUENTA" TextColor="#424949" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Small"/>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <Label Text="Email" TextColor="#424949" HorizontalOptions="StartAndExpand" FontSize="15" VerticalOptions="Center" WidthRequest="90"/>
+                            <Entry x:Name="entryEmail" Placeholder="Email" Keyboard="Email" FontSize="Small" FlexLayout.AlignSelf="Stretch" WidthRequest="215" HorizontalOptions="CenterAndExpand" TextColor="Black" IsEnabled="False" />
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <Label Text="Usuario" TextColor="#424949" HorizontalOptions="StartAndExpand" FontSize="15" VerticalOptions="Center" WidthRequest="90"/>
+                            <Entry x:Name="entryName" Keyboard="Text" MaxLength="10" FontSize="Small" FlexLayout.AlignSelf="Stretch" WidthRequest="215" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <Label Text="Contraseña" TextColor="#424949" HorizontalOptions="StartAndExpand" FontSize="15" VerticalOptions="Center" WidthRequest="90"/>
+                            <Entry x:Name="entryPassword" Keyboard="Text" MaxLength="8" IsPassword="True" FontSize="Small" FlexLayout.AlignSelf="Stretch" WidthRequest="215" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <Label Text="Rep. Contra." TextColor="#424949" HorizontalOptions="StartAndExpand" FontSize="15" VerticalOptions="Center" WidthRequest="90"/>
+                            <Entry x:Name="entryConfPassword" MaxLength="8" IsPassword="True" FontSize="Small" FlexLayout.AlignSelf="Stretch"  WidthRequest="215" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="FillAndExpand" Spacing="2" x:Name="EtiquetaPassword" IsVisible="False">
+                            <Label x:Name="warningPassword" Text="" IsVisible="False" TextColor="Blue" FontSize="12" BackgroundColor="Transparent" FlexLayout.AlignSelf="End" WidthRequest="305"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                            <Label Text="Activo" TextColor="#424949" HorizontalOptions="Start" FontSize="15" VerticalOptions="Center" WidthRequest="90"/>
+                            <Switch x:Name="valActive" HorizontalOptions="StartAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Button x:Name="cuentaEdit" Clicked="cuentaEdit_Clicked" FontSize="Medium" TextColor="White" BorderColor="Black" BackgroundColor="#6fb7ff"  CornerRadius="5" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Text="Actualizar"></Button>
+            </FlexLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

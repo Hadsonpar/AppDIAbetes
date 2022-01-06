@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppDIAbetes.Views.Login"
+             Title="Iniciar Sesión">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="1" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+            <!--<ScrollView>-->
+        <StackLayout>
+            <AbsoluteLayout>
+                <Image Source="fondo.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+                
+                <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="30,0,30,0" BackgroundColor="Transparent">
+                    <Image Source="DIAbetes.png" HeightRequest="150" WidthRequest="150" FlexLayout.AlignSelf="Center" BackgroundColor="Transparent" />
+                    <Label TextColor="White" FontAttributes="Bold" Text="Iniciar Sesión" FlexLayout.AlignSelf="Center" FontSize="20"/>
+                    <Grid>
+                        <BoxView BackgroundColor="White" WidthRequest="300" CornerRadius="50"/>
+                        <Entry x:Name="userEmailEntry" ReturnType="Next" Placeholder="Correo electrónico" FontSize="Small" Margin="15,0,15,0" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" TextColor="#00b9de" Keyboard="Email"/>
+                    </Grid>
+                    <!--
+                    <Grid>
+                        <BoxView BackgroundColor="White" WidthRequest="300" CornerRadius="50"/>
+                        <Entry x:Name="passwordEntry" ReturnType="Done" IsPassword="True" Placeholder="Password" FontSize="Small" Margin="15,0,15,0"  FlexLayout.AlignSelf="Stretch"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" TextColor="#00b9de" />
+                    </Grid>
+                    -->
+                    <Frame BackgroundColor="White" Padding="0" CornerRadius="50">
+                        <StackLayout Grid.Row="2" Grid.Column="1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions >
+                                <!--<Entry IsPassword="True" x:Name="Password" TextColor="Black" Placeholder="Password" Grid.Column="0" Grid.ColumnSpan="2"/>-->
+
+                                <Entry x:Name="passwordEntry" IsPassword="True" Placeholder="Contraseña" FontSize="Small" Keyboard="Text" MaxLength="8" Margin="15,0,50,0"  FlexLayout.AlignSelf="Stretch"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" TextColor="#00b9de" Grid.Column="0" Grid.ColumnSpan="2"/>
+                                <Image x:Name="iconView" Source="hideicon.png" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1" Margin="15,0,15,0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="ShowPass" NumberOfTapsRequired="1" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Button x:Name="btnLogin" FontSize="Medium" BorderColor="White" BorderWidth="2" FlexLayout.AlignSelf="Stretch" CornerRadius="50"  HorizontalOptions="CenterAndExpand" Text="Iniciar Sesión" Clicked="loging_Clicked" TextColor="White" BackgroundColor="#00b9de"/>                    
+                    <Label x:Name="forgetLabel" Text="¿Olvidó su contraseña?" TextColor="White" FontSize="16" BackgroundColor="Transparent" FlexLayout.AlignSelf="End"/>
+                </FlexLayout>
+            </AbsoluteLayout>
+        </StackLayout>
+        <!--</ScrollView>-->
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppDIAbetes.MainPage"
+             Title="Registro y control diario"
+             x:Name="DIAbetes" BackgroundColor="Transparent" NavigationPage.HasBackButton="False">
+    <ContentPage.Content>
+        
+        <AbsoluteLayout>
+            <Image Source="fondo.png" Aspect="AspectFill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+
+            <FlexLayout IsVisible="True" JustifyContent="Center" Direction="Column" AlignItems="Center" Margin="30,0,30,0">
+                <Image Source="DIAbetes.png" FlexLayout.AlignSelf="Center" BackgroundColor="Transparent" Margin="0,0,0,100"/>
+
+                <Button x:Name="btnLogin" FontSize="Medium" BorderColor="White" BorderWidth="2" FlexLayout.AlignSelf="Stretch" CornerRadius="50"  HorizontalOptions="CenterAndExpand" Text="Iniciar Sesión" Clicked="btnLogin_Clicked" TextColor="White" BackgroundColor="#00b9de"/>
+
+                <Button x:Name="btnSignUp" FontSize="Medium" BorderColor="#00b9de" BorderWidth="3" FlexLayout.AlignSelf="Stretch" CornerRadius="50" HorizontalOptions="CenterAndExpand" Text="regístrese aquí" Clicked="btnSignUp_Clicked" TextColor="#3a75a0" BackgroundColor="White" Margin="0,10,0,10"/>
+                <Label x:Name="lblTextApp" FontSize="12" TextColor="White" BackgroundColor="Transparent" FlexLayout.AlignSelf="Center" HorizontalTextAlignment="Center"/>
+                <!--<Label Text="Visualiza tus reportes en línea de una manera rápida y fácil comparación y observación de la tendencia de tu glucosa, envía por correo electrónico la lista mensual de datos registrados a tu medico tratante." FontSize="12" TextColor="DarkGray" BackgroundColor="Transparent" FlexLayout.AlignSelf="Center"/>-->
+            </FlexLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>    
+</ContentPage>

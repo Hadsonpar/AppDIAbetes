@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppDIAbetes.Views.PageMain" BackgroundColor="Transparent">
+    <MasterDetailPage.Master>
+        <ContentPage Title="masterPage">
+            <Grid BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="142" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid BackgroundColor="#548faf">
+                    <Image Source="DIAbetes.png" FlexLayout.AlignSelf="Center" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="130" WidthRequest="155" />
+                    <Label x:Name="labelEmail" Text="" TextColor="White" FontSize="11" HorizontalTextAlignment="Center" Padding="0,122,0,0"/>
+                </Grid>
+                <StackLayout Margin="0,0,0,0" Grid.Row="1" Spacing="0">
+                    <ListView x:Name="listPageMain" ItemSelected="OnListItemSelected" BackgroundColor="White" SeparatorColor="#6fb7ff" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageCell TextColor="#3399ff" DetailColor="#AED6FF"
+                                            Text="{Binding title}"
+                                            Detail="{Binding detail}"
+                                            ImageSource="{Binding image}">
+                                    </ImageCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

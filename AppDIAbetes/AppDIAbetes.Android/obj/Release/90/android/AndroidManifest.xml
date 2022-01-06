@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.3" package="com.hadsonpar.appdiabetes" android:installLocation="auto" android:versionCode="3">
+  <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="29" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+  <application android:label="AppDIAbetes.Android" android:icon="@drawable/icon" android:name="android.app.Application" android:allowBackup="true">
+    <provider android:name="android.support.v4.content.FileProvider" android:authorities="com.hadsonpar.appdiabetes.fileprovider" android:exported="false" android:grantUriPermissions="true">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+    </provider>
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="DIAbetes" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="crc6447ed8caa2ca8866e.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:configChanges="orientation|screenSize|uiMode" android:name="crc646957603ea1820544.MediaPickerActivity" />
+    <provider android:authorities="com.hadsonpar.appdiabetes.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="xamarin.essentials.fileProvider">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/xamarin_essentials_fileprovider_file_paths" />
+    </provider>
+    <receiver android:enabled="true" android:exported="false" android:name="crc643f46942d9dd1fff9.PowerSaveModeBroadcastReceiver" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999999" android:authorities="com.hadsonpar.appdiabetes.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+</manifest>

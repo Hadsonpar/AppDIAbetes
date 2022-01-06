@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             mc:Ignorable="d"
+             x:Class="AppDIAbetes.Views.Options.Control.TabPageCtrlMonitor"
+             Title="Monitoreo"
+             IconImageSource="ic_monitor.png"
+             BackgroundColor="#FFFFFF">
+    <ContentPage.Content>
+        
+        <AbsoluteLayout BackgroundColor="White" Margin="5,0,5,5">
+            <Grid VerticalOptions="FillAndExpand" Padding="8,5,8,10" BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <StackLayout HorizontalOptions="FillAndExpand" Spacing="10">
+
+                        <Frame Padding="10,10,10,10" x:Name="fSecDeterminar" IsVisible="True">
+                            <input:RadioButtonGroupView HorizontalOptions="FillAndExpand" Orientation="Horizontal" x:Name="tipIngreso" SelectedItemChanged="ingSelected" SelectedItem="{Binding allIng}">
+                                <input:RadioButton x:Name="ingSelectedTD" TextFontSize="17" TextColor="#424949" Text="Automático" Value="TD" IsChecked="True"/>
+                                <input:RadioButton x:Name="ingSelectedPD" TextFontSize="17" TextColor="#424949" Text="Manual" Value="PD" />
+                            </input:RadioButtonGroupView>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Frame Padding="10,10,10,10" x:Name="fSecValue" IsVisible="True">
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <Label Text="VALOR:" WidthRequest="50" TextColor="#424949" HorizontalOptions="StartAndExpand" FontSize="15" VerticalOptions="Center"/>
+
+                            <Frame BorderColor="#6fb7ff" HasShadow="False" Padding="0">
+                                <Editor x:Name="editorValueGlu" WidthRequest="130" FontSize="16" Placeholder="Valor glucómetro" Text="{Binding ingVal}"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Keyboard="Numeric" MaxLength="3" HeightRequest="45"/>
+                            </Frame>
+
+                            <Button x:Name="btnIng" Clicked="ing_Clicked" Text="Ingresar" FontSize="Small" TextColor="White" BackgroundColor="#6fb7ff" CornerRadius="5" WidthRequest="100" HeightRequest="45"/>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+                
+                <Grid Grid.Row="2">
+                    <Frame Padding="10,10,10,10" x:Name="comentValue" IsVisible="True">
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <Frame BorderColor="#6fb7ff" HasShadow="False" Padding="0">
+                                <StackLayout>
+                                    <Editor WidthRequest="305" Margin="4,0,4,0" x:Name="comentValueGlu" FontSize="Small" Placeholder="Ingresa una nota" Text="{Binding comentVal}" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Keyboard="Text" MaxLength="100" HeightRequest="55"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                </Grid>                
+               
+                <Grid Grid.Row="3">
+                    <Frame Padding="10,5,10,5" x:Name="fSecDateTime" IsVisible="False">
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <Label Text="FECHA:" TextColor="#424949" HorizontalOptions="StartAndExpand" FontSize="15" VerticalOptions="Center"/>
+                            <DatePicker Format="dd/MM/yyyy"
+                                             x:Name="dpFechaIng" TextColor="#424949" FontSize="16"            
+                                             HorizontalOptions="EndAndExpand"  BackgroundColor="Transparent"
+                                             MinimumDate="01/01/1920" MaximumDate="12/31/2030" />
+
+                            <Label Text="HORA:" TextColor="#424949" HorizontalOptions="StartAndExpand" FontSize="15" VerticalOptions="Center"/>
+                            <TimePicker Format="hh:mm tt"
+                                            x:Name="tpickerTime" TextColor="#424949" FontSize="16" HorizontalOptions="EndAndExpand"  BackgroundColor="Transparent" />
+
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+                
+                <Grid Grid.Row="4">
+                    <Frame x:Name="fGrillaViewDetails" HasShadow="False" Padding="5" BackgroundColor="Transparent" BorderColor="#6fb7ff">
+                        <StackLayout>
+                            <ListView x:Name="lvMonitor"
+                                    SeparatorVisibility="Default"
+                                    RowHeight="-1"
+                                    FlexLayout.AlignSelf="Start"  HasUnevenRows="True" SeparatorColor="#6fb7ff">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell Height="35">
+                                            <StackLayout 
+                                                    Orientation="Horizontal"
+                                                    HorizontalOptions="FillAndExpand">
+                                                <Image x:Name="imageInd" Source="{Binding imgInd}" 
+                                                            HeightRequest="18" 
+                                                            HorizontalOptions="Start"/>
+                                                <Label Text="{Binding ingVal}"
+                                                            WidthRequest="50" FontSize="27"
+                                                            FontAttributes="None"
+                                                            HorizontalTextAlignment="End"/>
+                                                <Label Text="{Binding typeGloc}" 
+                                                            FontAttributes="None" FontSize="20"
+                                                            VerticalOptions="End"
+                                                           VerticalTextAlignment="End"/>
+                                                <Label Text="{Binding ingDateTime, StringFormat='\{0:dd-MMM-yyyy hh:mm tt\}'}"
+                                                            VerticalTextAlignment="End" FontSize="16"
+                                                            HorizontalOptions="EndAndExpand"/>
+                                            </StackLayout>
+                                            <!--</Frame>-->
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </Grid>
+        </AbsoluteLayout>
+    
+    </ContentPage.Content>
+</ContentPage>
